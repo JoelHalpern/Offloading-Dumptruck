@@ -4,7 +4,7 @@ coding: us-ascii
 
 title: The IGP is not a Dump Truck
 abbrev: rtgwg-not-a-dump-truck
-docname: draft-halpern-rtgwg-not-a-dump-truck-00
+docname: draft-halpern-rtgwg-not-a-dump-truck-latest
 category: std
 submissiontype: IETF
 stand_alone: yes
@@ -29,6 +29,10 @@ author:
     org: Energy Sciences Network
     email: buraglio@forwardingplane.net
  -
+    ins: A. Alston
+    name: Andrew Alston
+    org: Equity Technology Group
+    email: Andrew.alston@equitybank.co.ke 
      
 normative:
   RFC2104:
