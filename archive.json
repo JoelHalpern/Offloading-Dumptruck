@@ -1,0 +1,86 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2026-09-20T02:15:49.510531+00:00",
+  "repo": "JoelHalpern/Offloading-Dumptruck",
+  "labels": [
+    {
+      "name": "accessibility",
+      "description": "Barrier affecting people with disabilities",
+      "color": "f143ab"
+    },
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOUfJuls8AAAABEBVRzg",
+      "title": "Renaming the draft",
+      "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/pull/1",
+      "state": "OPEN",
+      "author": "martinthomson",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": ".md is necessary.\r\nAs is the change to the docname in the metadata.\r\nThe trailing \"-\" is causing problems too.\r\n\r\nThe rest is optional, but I'm lazy and my editor trims trailing whitespace (which can cause problems in markdown, sadly).",
+      "createdAt": "2026-09-18T02:21:22Z",
+      "updatedAt": "2026-09-18T02:21:22Z",
+      "baseRepository": "JoelHalpern/Offloading-Dumptruck",
+      "baseRefName": "main",
+      "baseRefOid": "2390eab19b3eb59650325ff827440227e5764988",
+      "headRepository": "martinthomson/Offloading-Dumptruck",
+      "headRefName": "fixups",
+      "headRefOid": "69b3567a828ed0a6db9f4fb68a8e422236e31ff9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
