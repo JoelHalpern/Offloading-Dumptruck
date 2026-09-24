@@ -28,7 +28,6 @@ author:
     name: Nick Buraglio
     org: Energy Sciences Network
     email: buraglio@forwardingplane.net
- -
     ins: A. Alston
     name: Andrew Alston
     org: Equity Technology Group
