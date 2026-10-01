@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-29T03:12:20.986283+00:00",
+  "timestamp": "2026-10-01T03:00:47.742564+00:00",
   "repo": "JoelHalpern/Offloading-Dumptruck",
   "labels": [
     {
@@ -54,7 +54,40 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 2,
+      "id": "I_kwDOUfJuls8AAAABT6TCjg",
+      "title": "Elaborate on kinds of information with Scopes",
+      "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/issues/2",
+      "state": "OPEN",
+      "author": "JoelHalpern",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Explain better the three kinds of information I am describing, and give examples of each.  ",
+      "createdAt": "2026-09-29T13:15:16Z",
+      "updatedAt": "2026-09-29T13:15:16Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOUfJuls8AAAABT6ULKw",
+      "title": "Relationship to BGP",
+      "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/issues/3",
+      "state": "OPEN",
+      "author": "JoelHalpern",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Discuss whether this applies to BGP.  Explain that it could easily apply to use of BGP within an operator, that it is much harder to apply it across operators, and that in either case it would be for later effort to decide if that is of interest.",
+      "createdAt": "2026-09-29T13:16:46Z",
+      "updatedAt": "2026-09-29T13:16:46Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
