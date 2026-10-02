@@ -82,6 +82,27 @@ Finally, and in many ways most importantly, there is a description of the
 deployability issues and properties that need to be recognized to make this
 undertaking effective.
 
+## Relationship to BGP
+
+One question that comes up when looking at the above is whether this is relevant for BGP.  First and foremost, it is important to understand that this proposal is not intended to propose solutions for the BGP space.
+
+Having said that, it is clear that BGP has similar issues, and that a
+well-designed solutioin may have applicability to BGP.  THere is an
+important disnction to be drawn if one wishes to consider that.  For
+BGP usage within an operator domain, and for information intended to
+be propagated only within that domain, a sultion that address the
+problems describe below is likely to have applicability.  The privacy
+concerns and the ability to reach the relevant parties seem quite
+similar.
+
+In contrast, for information being propagated between operators, and
+even more for information to be propagated across significant swaths
+of the Interet, an approach that solves the problems described here is
+unlikely to be applicable.  That problem likely requires separate
+evaluation and approaches if it is to be addressed.  Constraints to
+meet that need are intended to be out of scope for this problem and
+its derived solutions.
+
 
 # Conventions and Definitions
 
