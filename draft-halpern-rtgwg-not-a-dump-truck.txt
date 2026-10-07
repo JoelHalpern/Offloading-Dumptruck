@@ -4,9 +4,11 @@
 
 RTGWG Working Group                                           J. Halpern
 Internet-Draft                                                       HPE
-Intended status: Standards Track                               A. Alston
-Expires: 28 March 2027                           Equity Technology Group
-                                                       24 September 2026
+Intended status: Informational                               N. Buraglio
+Expires: 10 April 2027                           Energy Sciences Network
+                                                               A. Alston
+                                                 Equity Technology Group
+                                                          7 October 2026
 
 
                       The IGP is not a Dump Truck
@@ -18,6 +20,17 @@ Abstract
    carry arbitrary information, often referred to using the phrase "the
    IGP is not a dump truck".  It describes the kinds of information
    carried in an IGP and proposes an approach to changing the system.
+
+Discussion Venues
+
+   This note is to be removed before publishing as an RFC.
+
+   Discussion of this document takes place on the Routing Area Working
+   Group Working Group mailing list (rtgwg@ietf.org), which is archived
+   at https://mailarchive.ietf.org/arch/browse/rtgwg/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/JoelHalpern/Offloading-Dumptruck.
 
 Status of This Memo
 
@@ -34,7 +47,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 March 2027.
+   This Internet-Draft will expire on 10 April 2027.
 
 Copyright Notice
 
@@ -59,13 +72,15 @@ Table of Contents
      4.1.  Discovery
      4.2.  Information Structure
      4.3.  Providing Information
-     4.4.  Collecting information
+     4.4.  Collecting Information
    5.  Infrastructure properties
    6.  Deployment considerations
    7.  Security Considerations
    8.  IANA Considerations
    9.  Acknowledgements
-   10. Normative References
+   10. References
+     10.1.  Normative References
+     10.2.  Informative References
    Authors' Addresses
 
 1.  Introduction
@@ -83,10 +98,9 @@ Table of Contents
    "that is too much".  This leaves the requestor with a need that is
    hard to meet.  Further, as the IGP operations require (slow) refresh
    of information, we pay additional information propagation costs that
-   are not well-matched to the problem.
-   The net effect is a set of needs that are not well-met and which can
-   interfere with effective operation of the IGP for its primary
-   purpose.
+   are not well-matched to the problem.  The net effect is a set of
+   needs that are not well-met and which can interfere with effective
+   operation of the IGP for its primary purpose.
 
    This draft outlines an approach to changing the situation.  It starts
    by describing the information carried in the IGP in terms of the
@@ -133,19 +147,18 @@ Table of Contents
        subject to change as device software or configuration changes, is
        not subject to rapid environmental effects or similar dynamics.
        Examples include node capability information, the set of VPNs a
-       node is supporting, and similar.
-       Link MTU is another example of information that can be handled by
-       this system.  Service SIDs are an example of information which
-       while currently supported in other ways may benefit from this
-       mechanism if it gains traction.  Whether the supported set of
-       information should include information such as link latency for
-       non-radio links is for future discussion.  The first important
-       property is that this information does not need to be refreshed.
-       So designs built around reliable delivery can be considered.  It
-       is also frequently information which is only of interest to a
-       subset of nodes.  So a distribution mechanism that does not
-       burden uninterested nodes with effort or storage is worth
-       evaluating.
+       node is supporting, and similar.  Link MTU is another example of
+       information that can be handled by this system.  Service SIDs are
+       an example of information which while currently supported in
+       other ways may benefit from this mechanism if it gains traction.
+       Whether the supported set of information should include
+       information such as link latency for non-radio links is for
+       future discussion.  The first important property is that this
+       information does not need to be refreshed.  So designs built
+       around reliable delivery can be considered.  It is also
+       frequently information which is only of interest to a subset of
+       nodes.  So a distribution mechanism that does not burden
+       uninterested nodes with effort or storage is worth evaluating.
 
 4.  Information distribution properties
 
@@ -226,7 +239,7 @@ Table of Contents
    Providers of information will need to be able to withdraw information
    they have provided and update the content of specific items.
 
-4.4.  Collecting information
+4.4.  Collecting Information
 
    A node desiring to retrieve information from the system registers and
    authenticates as above.  Following that, it provides a series of
@@ -234,7 +247,7 @@ Table of Contents
    scoped set of information from all contributors, with updates when
    content changes such as new information becoming available,
    information being withdrawn, or an update of content.  In particular,
-   this frequently occurs whan a new node joins the operating
+   this frequently occurs when a new node joins the operating
    environment.  There is no rush about deleting out-of-date
    information, although explicit deletion does need to be propagated.
 
@@ -255,10 +268,9 @@ Table of Contents
 
    The exact mechanism for doing this may be a distributed database, a
    pub-sub service, or any number of techniques developed in the server
-   world.
-   Assuming we have a stable interface, it is not clear whether there is
-   even a need to standardize one or more infrastructure handling
-   systems.
+   world.  Assuming we have a stable interface, it is not clear whether
+   there is even a need to standardize one or more infrastructure
+   handling systems.
 
 6.  Deployment considerations
 
@@ -293,12 +305,9 @@ Table of Contents
 
    This document does not yet have any acknowledgements.
 
-10.  Normative References
+10.  References
 
-   [RFC2104]  Krawczyk, H., Bellare, M., and R. Canetti, "HMAC: Keyed-
-              Hashing for Message Authentication", RFC 2104,
-              DOI 10.17487/RFC2104, February 1997,
-              <https://www.rfc-editor.org/rfc/rfc2104>.
+10.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -309,12 +318,24 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
+10.2.  Informative References
+
+   [RFC2104]  Krawczyk, H., Bellare, M., and R. Canetti, "HMAC: Keyed-
+              Hashing for Message Authentication", RFC 2104,
+              DOI 10.17487/RFC2104, February 1997,
+              <https://www.rfc-editor.org/rfc/rfc2104>.
+
 Authors' Addresses
 
    Joel Halpern
    HPE
    United States of America
    Email: joel.halpern@hpe.com
+
+
+   Nick Buraglio
+   Energy Sciences Network
+   Email: buraglio@forwardingplane.net
 
 
    Andrew Alston
