@@ -5,7 +5,7 @@ coding: us-ascii
 title: The IGP is not a Dump Truck
 abbrev: rtgwg-not-a-dump-truck
 docname: draft-halpern-rtgwg-not-a-dump-truck-latest
-category: std
+category: info
 submissiontype: IETF
 stand_alone: yes
 pi: [toc, tocompact, tocindent, sortrefs, symrefs, compact]
@@ -28,14 +28,17 @@ author:
     name: Nick Buraglio
     org: Energy Sciences Network
     email: buraglio@forwardingplane.net
+  -
     ins: A. Alston
     name: Andrew Alston
     org: Equity Technology Group
     email: Andrew.alston@equitybank.co.ke
 
 normative:
-  RFC2104:
   RFC2119:
+
+informative:
+  RFC2104:
 
 --- abstract
 
@@ -196,14 +199,14 @@ information is handled by this system.
 Providers of information will need to be able to withdraw information they
 have provided and update the content of specific items.
 
-## Collecting information
+## Collecting Information
 
 A node desiring to retrieve information from the system registers and
 authenticates as above.  Following that, it provides a series of requests
 for information.  The common case will be a request for some scoped set
 of information from all contributors, with updates when content changes
 such as new information becoming available, information being withdrawn,
-or an update of content.  In particular, this frequently occurs whan
+or an update of content.  In particular, this frequently occurs when
 a new node joins the operating environment.  There is no rush
 about deleting out-of-date information, although explicit deletion does need
 to be propagated.
