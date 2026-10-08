@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-04T03:19:41.707172+00:00",
+  "timestamp": "2026-10-08T03:29:07.414105+00:00",
   "repo": "JoelHalpern/Offloading-Dumptruck",
   "labels": [
     {
@@ -79,11 +79,13 @@
       "state": "OPEN",
       "author": "JoelHalpern",
       "authorAssociation": "OWNER",
-      "assignees": [],
+      "assignees": [
+        "JoelHalpern"
+      ],
       "labels": [],
       "body": "Discuss whether this applies to BGP.  Explain that it could easily apply to use of BGP within an operator, that it is much harder to apply it across operators, and that in either case it would be for later effort to decide if that is of interest.",
       "createdAt": "2026-09-29T13:16:46Z",
-      "updatedAt": "2026-09-29T13:16:46Z",
+      "updatedAt": "2026-10-06T22:34:06Z",
       "closedAt": null,
       "comments": []
     }
@@ -114,6 +116,34 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOUfJuls8AAAABHK9PTw",
+      "title": "push minor editorial changes",
+      "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/pull/4",
+      "state": "MERGED",
+      "author": "buraglio",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-10-07T17:35:44Z",
+      "updatedAt": "2026-10-07T17:35:52Z",
+      "baseRepository": "JoelHalpern/Offloading-Dumptruck",
+      "baseRefName": "main",
+      "baseRefOid": "f8c400cbbf35d76c11b511f1d915ee7e9bdd595d",
+      "headRepository": "JoelHalpern/Offloading-Dumptruck",
+      "headRefName": "ndb-edit-07-oct-2026",
+      "headRefOid": "eb09df6e0067ff5f5d9c052fa49f03770c6fe748",
+      "closedAt": "2026-10-07T17:35:52Z",
+      "mergedAt": "2026-10-07T17:35:52Z",
+      "mergedBy": "buraglio",
+      "mergeCommit": {
+        "oid": "ac7591625c50ca4b5a5970a6f6787f9d66203542"
+      },
       "comments": [],
       "reviews": []
     }
