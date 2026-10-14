@@ -202,9 +202,9 @@ have provided and update the content of specific items.
 ## Collecting Information
 
 A node desiring to retrieve information from the system registers and
-authenticates as above.  Following that, it provides a series of requests
+authenticates as above.  Following that, each node provides a series of requests
 for information.  The common case will be a request for some scoped set
-of information from all contributors, with updates when content changes
+of information from all contributors, with timely updates when content changes
 such as new information becoming available, information being withdrawn,
 or an update of content.  In particular, this frequently occurs when
 a new node joins the operating environment.  There is no rush
@@ -217,7 +217,7 @@ The obvious starting point for such a system is a set of servers offering the
 information handling service.  This must be distributed and replicated so as
 to be resilient across failure of individual servers.  It is assumed that
 the system can be delivered by a combination of services co-resident with
-routers and separate software servers, as the operator prefers.
+routers and separate software instances, to be decided by the operator.
 
 The infrastructure will need a mechanism so that when new servers join the
 system, such new participants can reliably fetch the data set.  It is not
@@ -250,10 +250,76 @@ make more use of this approach.
 
 # Security Considerations
 
-Any protocol effort intending to address this problem will need to include
-authentication and confidentiality mechanisms, along with analysis of how
-these mechanisms address the risks of inappropriate information disclosure.
+The system described in this document introduces a distributed service
+through which nodes register, distribute, and consume routing-adjacent
+information.  This creates a new trust surface that requires careful
+analysis in any solution effort.  This section identifies the principal
+threat classes.
 
+## Participant Authentication
+
+A node that gains unauthorized access to the service and registers false
+information — incorrect capability flags, false VPN membership, incorrect
+link MTU — can cause other nodes to make incorrect forwarding decisions.
+Authentication mechanisms must ensure that only authorized nodes can
+register information and that registered information is attributable to
+a specific node identity consistent with that node's identity in the IGP.
+Compromise of a single participant must not enable persistent corruption
+of information attributed to other nodes.
+
+## Information Integrity and Confidentiality
+
+Integrity protection must apply to the full distribution path, not only
+the registration leg.  A man-in-the-middle between a registering node
+and the service, or between the service and a collecting node, must not
+be able to modify advertisements undetected.
+
+Confidentiality requirements vary by information type.  VPN membership
+information (which nodes participate in a given VPN) is sensitive in
+multi-tenant environments; disclosure reveals customer topology to
+unauthorized parties.  Node capability flags and link MTU values are
+generally not sensitive.  Any solution must support per-information-type
+confidentiality policy rather than applying a uniform policy to all
+content.
+
+## Denial of Service
+
+The service is a new high-value target.  Three distinct denial-of-srvice
+vectors must be considered:
+
+- Attacks against registration endpoints prevent nodes from publishing
+  capabilities; consumers see absent or stale data and may make
+  incorrect forwarding decisions.
+
+- Attacks against the discovery mechanism (see Section 4.1) can redirect
+  nodes to a malicious service before a session is established; the
+  bootstrap trust anchor must itself be authenticated.
+
+- Attacks against the distribution path prevent updates from reaching
+  consumers, causing them to act on stale information for an extended
+  period.
+
+The replicated and distributed nature of the infrastructure partially
+mitigates availability attacks, but does not eliminate them.
+
+## Stale Information
+
+When a node fails or is withdrawn without cleanly deregistering, its
+information persists until explicit deletion or expiry.  Consumers
+acting on stale capability or membership data face correctness risk.
+This risk is amplified if an attacker can prevent a node from
+deregistering (for example by severing its management plane connectivity
+while its data plane remains reachable), causing consumers to continue
+acting on capabilities that are no longer valid.
+
+## Relationship to IGP Trust Models
+
+IS-IS and OSPF both provide cryptographic authentication of protocol
+messages.  The trust model for the offload service must be at least as
+strong as the IGP trust model it complements.  A node trusted in the
+IGP must not be able to inject false information into the offload
+service through a weaker authentication path, nor must the offload
+service become a vector for attacking the IGP itself.
 
 # IANA Considerations
 
