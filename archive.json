@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-08T03:29:07.414105+00:00",
+  "timestamp": "2026-10-15T02:17:20.787441+00:00",
   "repo": "JoelHalpern/Offloading-Dumptruck",
   "labels": [
     {
@@ -146,6 +146,48 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOUfJuls8AAAABIduS1g",
+      "title": "First pass at a security section.",
+      "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/pull/5",
+      "state": "MERGED",
+      "author": "buraglio",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-10-14T19:01:52Z",
+      "updatedAt": "2026-10-14T21:41:20Z",
+      "baseRepository": "JoelHalpern/Offloading-Dumptruck",
+      "baseRefName": "main",
+      "baseRefOid": "ac7591625c50ca4b5a5970a6f6787f9d66203542",
+      "headRepository": "JoelHalpern/Offloading-Dumptruck",
+      "headRefName": "ndb-edit-07-2026-sec",
+      "headRefOid": "1c1321548860fd62c00b23f52b3d0ff5f5301618",
+      "closedAt": "2026-10-14T21:41:20Z",
+      "mergedAt": "2026-10-14T21:41:20Z",
+      "mergedBy": "JoelHalpern",
+      "mergeCommit": {
+        "oid": "ab4adc6eaeddae1f767fee5bf1b979c638ea16fe"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOUfJuls8AAAABSVFsaQ",
+          "commit": {
+            "abbreviatedOid": "1c13215"
+          },
+          "author": "JoelHalpern",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "While I am not sure the stale information attack is significant, it doesn't hurt to include it.  And all the rest is good material.  Thank you for writing it up.",
+          "createdAt": "2026-10-14T21:41:02Z",
+          "updatedAt": "2026-10-14T21:41:02Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
