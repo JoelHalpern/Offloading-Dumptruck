@@ -104,7 +104,7 @@ similar technology does not need any alternatives when it is being
 used.  this could be based on capabilities such as Rotue Reflectors
 and separation of AFI/SAFI to different sessions.  Analysis of this
 alternative would be part of the considerations in any solution
-evaluation. 
+evaluation.
 
 In contrast, for information being propagated between operators, and
 even more for information to be propagated across significant swaths
