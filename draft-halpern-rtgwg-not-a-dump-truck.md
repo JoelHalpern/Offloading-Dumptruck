@@ -28,6 +28,7 @@ author:
     name: Nick Buraglio
     org: Energy Sciences Network
     email: buraglio@forwardingplane.net
+  - 
     ins: A. Alston
     name: Andrew Alston
     org: Equity Technology Group
@@ -94,6 +95,14 @@ be propagated only within that domain, a sultion that address the
 problems describe below is likely to have applicability.  The privacy
 concerns and the ability to reach the relevant parties seem quite
 similar.
+
+Alternatively, one could consider that within an operator domain BGP is
+a reasonable and effective dump truck, and with route reflectors and
+similar technology does not need any alternatives when it is being
+used.  this could be based on capabilities such as Rotue Reflectors
+and separation of AFI/SAFI to different sessions.  Analysis of this
+alternative would be part of the considerations in any solution
+evaluation. 
 
 In contrast, for information being propagated between operators, and
 even more for information to be propagated across significant swaths
