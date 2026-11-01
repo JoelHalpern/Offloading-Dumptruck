@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-15T02:17:20.787441+00:00",
+  "timestamp": "2026-11-01T03:07:07.303390+00:00",
   "repo": "JoelHalpern/Offloading-Dumptruck",
   "labels": [
     {
@@ -60,23 +60,31 @@
       "id": "I_kwDOUfJuls8AAAABT6TCjg",
       "title": "Elaborate on kinds of information with Scopes",
       "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/issues/2",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "JoelHalpern",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Explain better the three kinds of information I am describing, and give examples of each.  ",
       "createdAt": "2026-09-29T13:15:16Z",
-      "updatedAt": "2026-09-29T13:15:16Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-10-30T01:57:33Z",
+      "closedAt": "2026-10-30T01:57:33Z",
+      "comments": [
+        {
+          "author": "JoelHalpern",
+          "authorAssociation": "OWNER",
+          "body": "Declined based on concluding that there were sufficient examples for now.",
+          "createdAt": "2026-10-30T01:57:33Z",
+          "updatedAt": "2026-10-30T01:57:33Z"
+        }
+      ]
     },
     {
       "number": 3,
       "id": "I_kwDOUfJuls8AAAABT6ULKw",
       "title": "Relationship to BGP",
       "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/issues/3",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "JoelHalpern",
       "authorAssociation": "OWNER",
       "assignees": [
@@ -85,9 +93,17 @@
       "labels": [],
       "body": "Discuss whether this applies to BGP.  Explain that it could easily apply to use of BGP within an operator, that it is much harder to apply it across operators, and that in either case it would be for later effort to decide if that is of interest.",
       "createdAt": "2026-09-29T13:16:46Z",
-      "updatedAt": "2026-10-06T22:34:06Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-10-30T01:56:52Z",
+      "closedAt": "2026-10-30T01:56:52Z",
+      "comments": [
+        {
+          "author": "JoelHalpern",
+          "authorAssociation": "OWNER",
+          "body": "Added to main",
+          "createdAt": "2026-10-30T01:56:52Z",
+          "updatedAt": "2026-10-30T01:56:52Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -186,6 +202,55 @@
           "createdAt": "2026-10-14T21:41:02Z",
           "updatedAt": "2026-10-14T21:41:02Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOUfJuls8AAAABLqvpcQ",
+      "title": "BGP Relationship and authorship repair",
+      "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/pull/6",
+      "state": "MERGED",
+      "author": "JoelHalpern",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Repair the document author text, and add a section on the relationship of this problem to BGP.",
+      "createdAt": "2026-10-30T01:20:07Z",
+      "updatedAt": "2026-10-30T01:58:22Z",
+      "baseRepository": "JoelHalpern/Offloading-Dumptruck",
+      "baseRefName": "main",
+      "baseRefOid": "ab4adc6eaeddae1f767fee5bf1b979c638ea16fe",
+      "headRepository": "JoelHalpern/Offloading-Dumptruck",
+      "headRefName": "Pending-JMH",
+      "headRefOid": "8c13ad0b6b9fc7db9975679f70e2ce6bfb74ff0e",
+      "closedAt": "2026-10-30T01:52:51Z",
+      "mergedAt": "2026-10-30T01:52:51Z",
+      "mergedBy": "JoelHalpern",
+      "mergeCommit": {
+        "oid": "40dd40ab572b8cfa2f87993ac0111329c19b59ac"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOUfJuls8AAAABVCpBTw",
+          "commit": {
+            "abbreviatedOid": "1f885ac"
+          },
+          "author": "github-actions",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-30T01:22:02Z",
+          "updatedAt": "2026-10-30T01:22:02Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "````suggestion\nevaluation.\n````",
+              "createdAt": "2026-10-30T01:22:02Z",
+              "updatedAt": "2026-10-30T01:22:02Z"
+            }
+          ]
         }
       ]
     }
