@@ -38,7 +38,10 @@ normative:
   RFC2119:
 
 informative:
-  RFC2104:
+  RFC7752:
+  RFC7981:
+  RFC8919:
+  RFC8920:
 
 --- abstract
 
@@ -74,7 +77,7 @@ describing the information carried in the IGP in terms of the dynamics
 relevant to separating the dump truck aspects.  That section then
 describes what appears to be a tractable and useful separation.
 
-An additional section then starts to describe the interface properties
+An additional section then starts to describe the API properties
 that a solution proposal can look at.
 
 This is followed by a brief description of the infrastructure of a solution,
@@ -87,33 +90,67 @@ undertaking effective.
 
 ## Relationship to BGP
 
-One question that comes up when looking at the above is whether this is relevant for BGP.  First and foremost, it is important to understand that this proposal is not intended to propose solutions for the BGP space.
+This proposal is not intended to address the BGP space.  BGP does have
+similar failure modes when used to carry non-routing state, and a
+well-designed solution to the IGP problem may turn out to have applicability
+there, but only in limited cases.
 
-Having said that, it is clear that BGP has similar issues, and that a
-well-designed solutioin may have applicability to BGP.  THere is an
-important disnction to be drawn if one wishes to consider that.  For
-BGP usage within an operator domain, and for information intended to
-be propagated only within that domain, a sultion that address the
-problems describe below is likely to have applicability.  The privacy
-concerns and the ability to reach the relevant parties seem quite
-similar.
+For BGP used within a single operator domain to carry information that stays
+inside that domain, the privacy properties and reachability assumptions are
+similar enough that applicability is plausible.  Whether that holds in
+practice would need to be evaluated in a solution proposal.
 
-Alternatively, one could consider that within an operator domain BGP is
-a reasonable and effective dump truck, and with route reflectors and
-similar technology does not need any alternatives when it is being
-used.  this could be based on capabilities such as Rotue Reflectors
-and separation of AFI/SAFI to different sessions.  Analysis of this
-alternative would be part of the considerations in any solution
-evaluation.
+Within a domain, BGP with route reflectors and per-AFI/SAFI session separation
+may already be sufficient and need no replacement.  Evaluating that
+alternative would be part of any solution analysis.
 
-In contrast, for information being propagated between operators, and
-even more for information to be propagated across significant swaths
-of the Interet, an approach that solves the problems described here is
-unlikely to be applicable.  That problem likely requires separate
-evaluation and approaches if it is to be addressed.  Constraints to
-meet that need are intended to be out of scope for this problem and
-its derived solutions.
+For inter-operator propagation, and especially for information meant to
+traverse large portions of the Internet, the problem is different in kind.
+The scale, trust, and policy constraints involved are out of scope for this
+document, and solutions derived from this work should not be expected to
+address them.
 
+
+## Relationship to Existing IGP Extension Mechanisms
+
+The routing community has developed several mechanisms for carrying
+application-specific information within IGPs: IS-IS Application-Specific
+Link Attributes {{RFC8919}}, OSPF Application-Specific Link Attributes
+{{RFC8920}}, the IS-IS Router Capability TLV {{RFC7981}}, and BGP-LS
+{{RFC7752}} as an export layer for IGP topology state.  These let link and
+node attributes be tagged with application identifiers so that different
+consumers — RSVP-TE, SR Policy, LFA — can distinguish values for the same
+link.  For that purpose they work well, and this proposal does not seek to
+replace them.
+
+All of these mechanisms carry the constraints of IGP flooding, which limits
+their applicability to the broader problem described here:
+
+- Advertisements are flooded domain-wide with no mechanism for selective
+  delivery.  Every router in the flooding domain must receive, store, and
+  acknowledge every advertisement, regardless of whether it has any use
+  for the information.
+
+- Any change requires generating and flooding an LSP or LSA across the
+  domain, and periodic refresh (LSP lifetime, LSA age) adds steady-state
+  churn even for information that rarely changes.
+
+- Authentication is scoped to the adjacency or instance.  There is no way
+  to establish per-node identity for an advertisement or to verify which
+  node originated a specific piece of information.
+
+The IS-IS and OSPF working groups have also repeatedly declined to carry
+categories of non-topological node state — VPN membership, service SIDs,
+capability flags — on the grounds that such information does not belong in a
+routing protocol.  The limited uptake of the application-specific extension
+mechanisms reflects this mismatch between design intent and operator need,
+not a lack of operator interest.  What is needed is a purpose-built
+alternative with reliable delivery semantics, verifiable per-node identity,
+a standardized schema layer, and a distribution model that only reaches nodes
+that have asked for the information.
+
+Whether BGP-LS could potentially serve as transport for such a system is out of scope for this document and should be addressede in solution evaluation. Operators already depend on topological context such as node and link identity that BGP-LS carries, which has real value.
+Mechanism selection is reserved for a future solution proposal.
 
 # Conventions and Definitions
 
@@ -256,7 +293,7 @@ information.
 
 The exact mechanism for doing this may be a distributed database, a pub-sub
 service, or any number of techniques developed in the server world.
-Assuming we have a stable interface, it is not clear whether there is even
+Assuming we have a stable API, it is not clear whether there is even
 a need to standardize one or more infrastructure handling systems.
 
 # Deployment considerations
@@ -313,7 +350,7 @@ content.
 
 ## Denial of Service
 
-The service is a new high-value target.  Three distinct denial-of-srvice
+The service is a new high-value target.  Three distinct denial-of-service
 vectors must be considered:
 
 - Attacks against registration endpoints prevent nodes from publishing
