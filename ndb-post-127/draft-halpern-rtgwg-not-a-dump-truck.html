@@ -16,23 +16,23 @@ information, often referred to using the phrase
 It describes the kinds of information carried in an IGP
 and proposes an approach to changing the system. 
     ' name="description">
-<meta content="xml2rfc 3.34.1" name="generator">
+<meta content="xml2rfc 3.35.0" name="generator">
 <meta content="IGP" name="keyword">
 <meta content="draft-halpern-rtgwg-not-a-dump-truck-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.34.1
-    Python 3.14.8
-    ConfigArgParse 1.8.0
+  xml2rfc 3.35.0
+    Python 3.14.10
+    ConfigArgParse 1.10.1
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.12.2
+    platformdirs 4.14.7
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.9.1
+    wcwidth 0.9.4
 -->
 <link href="draft-halpern-rtgwg-not-a-dump-truck.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1033,7 +1033,7 @@ svg {
   & :is([stroke="white"], [stroke^="#fff"]) {
     stroke: var(--background-color);
   }
-  & :is([fill="black"], [fill^="#000"], :not([fill])) {
+  & :is([fill="black"], [fill^="#000"], :not([fill], [fill] *)) {
     fill: var(--text-color);
   }
   & :is([fill="white"], [fill^="#fff"]) {
@@ -1048,11 +1048,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">rtgwg-not-a-dump-truck</td>
-<td class="right">October 2026</td>
+<td class="right">November 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Halpern, et al.</td>
-<td class="center">Expires 10 April 2027</td>
+<td class="center">Expires 29 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1065,12 @@ svg {
 <dd class="internet-draft">draft-halpern-rtgwg-not-a-dump-truck-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-10-07" class="published">7 October 2026</time>
+<time datetime="2026-11-25" class="published">25 November 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-04-10">10 April 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-29">29 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1128,7 +1128,7 @@ and proposes an approach to changing the system.<a href="#section-abstract-1" cl
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 10 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 29 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1159,12 +1159,20 @@ and proposes an approach to changing the system.<a href="#section-abstract-1" cl
 <nav class="toc"><ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.1">
+                <p id="section-toc.1-1.1.2.1.1" class="keepWithNext"><a href="#section-1.1" class="auto internal xref">1.1</a>.  <a href="#name-relationship-to-bgp" class="internal xref">Relationship to BGP</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.2">
+                <p id="section-toc.1-1.1.2.2.1" class="keepWithNext"><a href="#section-1.2" class="auto internal xref">1.2</a>.  <a href="#name-relationship-to-existing-ig" class="internal xref">Relationship to Existing IGP Extension Mechanisms</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-information-categorization" class="internal xref">Information categorization</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-information-categorization" class="internal xref">Information categorization</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-information-distribution-pr" class="internal xref">Information distribution properties</a></p>
@@ -1191,6 +1199,23 @@ and proposes an approach to changing the system.<a href="#section-abstract-1" cl
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
+                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-participant-authentication" class="internal xref">Participant Authentication</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-information-integrity-and-c" class="internal xref">Information Integrity and Confidentiality</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3">
+                <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-denial-of-service" class="internal xref">Denial of Service</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.4">
+                <p id="section-toc.1-1.7.2.4.1"><a href="#section-7.4" class="auto internal xref">7.4</a>.  <a href="#name-stale-information" class="internal xref">Stale Information</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5">
+                <p id="section-toc.1-1.7.2.5.1"><a href="#section-7.5" class="auto internal xref">7.5</a>.  <a href="#name-relationship-to-igp-trust-m" class="internal xref">Relationship to IGP Trust Models</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
@@ -1239,7 +1264,7 @@ interfere with effective operation of the IGP for its primary purpose.<a href="#
 describing the information carried in the IGP in terms of the dynamics
 relevant to separating the dump truck aspects.  That section then
 describes what appears to be a tractable and useful separation.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">An additional section then starts to describe the interface properties
+<p id="section-1-4">An additional section then starts to describe the API properties
 that a solution proposal can look at.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <p id="section-1-5">This is followed by a brief description of the infrastructure of a solution,
 while explicitly not picking a mechanism.  There are a few properties that
@@ -1247,6 +1272,76 @@ are anticipated to be needed by any infrastructure addressing this space.<a href
 <p id="section-1-6">Finally, and in many ways most importantly, there is a description of the
 deployability issues and properties that need to be recognized to make this
 undertaking effective.<a href="#section-1-6" class="pilcrow">¶</a></p>
+<div id="relationship-to-bgp">
+<section id="section-1.1">
+        <h3 id="name-relationship-to-bgp">
+<a href="#section-1.1" class="section-number selfRef">1.1. </a><a href="#name-relationship-to-bgp" class="section-name selfRef">Relationship to BGP</a>
+        </h3>
+<p id="section-1.1-1">This proposal is not intended to address the BGP space.  BGP does have
+similar failure modes when used to carry non-routing state, and a
+well-designed solution to the IGP problem may turn out to have applicability
+there, but only in limited cases.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
+<p id="section-1.1-2">For BGP used within a single operator domain to carry information that stays
+inside that domain, the privacy properties and reachability assumptions are
+similar enough that applicability is plausible.  Whether that holds in
+practice would need to be evaluated in a solution proposal.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
+<p id="section-1.1-3">Within a domain, BGP with route reflectors and per-AFI/SAFI session separation
+may already be sufficient and need no replacement.  Evaluating that
+alternative would be part of any solution analysis.<a href="#section-1.1-3" class="pilcrow">¶</a></p>
+<p id="section-1.1-4">For inter-operator propagation, and especially for information meant to
+traverse large portions of the Internet, the problem is different in kind.
+The scale, trust, and policy constraints involved are out of scope for this
+document, and solutions derived from this work should not be expected to
+address them.<a href="#section-1.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="relationship-to-existing-igp-extension-mechanisms">
+<section id="section-1.2">
+        <h3 id="name-relationship-to-existing-ig">
+<a href="#section-1.2" class="section-number selfRef">1.2. </a><a href="#name-relationship-to-existing-ig" class="section-name selfRef">Relationship to Existing IGP Extension Mechanisms</a>
+        </h3>
+<p id="section-1.2-1">The routing community has developed several mechanisms for carrying
+application-specific information within IGPs: IS-IS Application-Specific
+Link Attributes <span>[<a href="#RFC8919" class="cite xref">RFC8919</a>]</span>, OSPF Application-Specific Link Attributes
+<span>[<a href="#RFC8920" class="cite xref">RFC8920</a>]</span>, the IS-IS Router Capability TLV <span>[<a href="#RFC7981" class="cite xref">RFC7981</a>]</span>, and BGP-LS
+<span>[<a href="#RFC7752" class="cite xref">RFC7752</a>]</span> as an export layer for IGP topology state.  These let link and
+node attributes be tagged with application identifiers so that different
+consumers --- RSVP-TE, SR Policy, LFA --- can distinguish values for the same
+link.  For that purpose they work well, and this proposal does not seek to
+replace them.<a href="#section-1.2-1" class="pilcrow">¶</a></p>
+<p id="section-1.2-2">All of these mechanisms carry the constraints of IGP flooding, which limits
+their applicability to the broader problem described here:<a href="#section-1.2-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-1.2-3.1">
+            <p id="section-1.2-3.1.1">Advertisements are flooded domain-wide with no mechanism for selective
+delivery.  Every router in the flooding domain must receive, store, and
+acknowledge every advertisement, regardless of whether it has any use
+for the information.<a href="#section-1.2-3.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.2-3.2">
+            <p id="section-1.2-3.2.1">Any change requires generating and flooding an LSP or LSA across the
+domain, and periodic refresh (LSP lifetime, LSA age) adds steady-state
+churn even for information that rarely changes.<a href="#section-1.2-3.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.2-3.3">
+            <p id="section-1.2-3.3.1">Authentication is scoped to the adjacency or instance.  There is no way
+to establish per-node identity for an advertisement or to verify which
+node originated a specific piece of information.<a href="#section-1.2-3.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-1.2-4">The IS-IS and OSPF working groups have also repeatedly declined to carry
+categories of non-topological node state --- VPN membership, service SIDs,
+capability flags --- on the grounds that such information does not belong in a
+routing protocol.  The limited uptake of the application-specific extension
+mechanisms reflects this mismatch between design intent and operator need,
+not a lack of operator interest.  What is needed is a purpose-built
+alternative with reliable delivery semantics, verifiable per-node identity,
+a standardized schema layer, and a distribution model that only reaches nodes
+that have asked for the information.<a href="#section-1.2-4" class="pilcrow">¶</a></p>
+<p id="section-1.2-5">Whether BGP-LS could potentially serve as transport for such a system is out of scope for this document and should be addressede in solution evaluation. Operators already depend on topological context such as node and link identity that BGP-LS carries, which has real value.
+Mechanism selection is reserved for a future solution proposal.<a href="#section-1.2-5" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1390,9 +1485,9 @@ have provided and update the content of specific items.<a href="#section-4.3-3" 
 <a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-collecting-information" class="section-name selfRef">Collecting Information</a>
         </h3>
 <p id="section-4.4-1">A node desiring to retrieve information from the system registers and
-authenticates as above.  Following that, it provides a series of requests
+authenticates as above.  Following that, each node provides a series of requests
 for information.  The common case will be a request for some scoped set
-of information from all contributors, with updates when content changes
+of information from all contributors, with timely updates when content changes
 such as new information becoming available, information being withdrawn,
 or an update of content.  In particular, this frequently occurs when
 a new node joins the operating environment.  There is no rush
@@ -1411,7 +1506,7 @@ to be propagated.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
 information handling service.  This must be distributed and replicated so as
 to be resilient across failure of individual servers.  It is assumed that
 the system can be delivered by a combination of services co-resident with
-routers and separate software servers, as the operator prefers.<a href="#section-5-1" class="pilcrow">¶</a></p>
+routers and separate software instances, to be decided by the operator.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <p id="section-5-2">The infrastructure will need a mechanism so that when new servers join the
 system, such new participants can reliably fetch the data set.  It is not
 expected that the system instances will have persistent storage, as, under a
@@ -1419,7 +1514,7 @@ full restart, the supporting nodes will re-register and provide their
 information.<a href="#section-5-2" class="pilcrow">¶</a></p>
 <p id="section-5-3">The exact mechanism for doing this may be a distributed database, a pub-sub
 service, or any number of techniques developed in the server world.
-Assuming we have a stable interface, it is not clear whether there is even
+Assuming we have a stable API, it is not clear whether there is even
 a need to standardize one or more infrastructure handling systems.<a href="#section-5-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1448,9 +1543,99 @@ make more use of this approach.<a href="#section-6-3" class="pilcrow">¶</a></p>
       <h2 id="name-security-considerations">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-7-1">Any protocol effort intending to address this problem will need to include
-authentication and confidentiality mechanisms, along with analysis of how
-these mechanisms address the risks of inappropriate information disclosure.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">The system described in this document introduces a distributed service
+through which nodes register, distribute, and consume routing-adjacent
+information.  This creates a new trust surface that requires careful
+analysis in any solution effort.  This section identifies the principal
+threat classes.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<div id="participant-authentication">
+<section id="section-7.1">
+        <h3 id="name-participant-authentication">
+<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-participant-authentication" class="section-name selfRef">Participant Authentication</a>
+        </h3>
+<p id="section-7.1-1">A node that gains unauthorized access to the service and registers false
+information --- incorrect capability flags, false VPN membership, incorrect
+link MTU --- can cause other nodes to make incorrect forwarding decisions.
+Authentication mechanisms must ensure that only authorized nodes can
+register information and that registered information is attributable to
+a specific node identity consistent with that node's identity in the IGP.
+Compromise of a single participant must not enable persistent corruption
+of information attributed to other nodes.<a href="#section-7.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="information-integrity-and-confidentiality">
+<section id="section-7.2">
+        <h3 id="name-information-integrity-and-c">
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-information-integrity-and-c" class="section-name selfRef">Information Integrity and Confidentiality</a>
+        </h3>
+<p id="section-7.2-1">Integrity protection must apply to the full distribution path, not only
+the registration leg.  A man-in-the-middle between a registering node
+and the service, or between the service and a collecting node, must not
+be able to modify advertisements undetected.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
+<p id="section-7.2-2">Confidentiality requirements vary by information type.  VPN membership
+information (which nodes participate in a given VPN) is sensitive in
+multi-tenant environments; disclosure reveals customer topology to
+unauthorized parties.  Node capability flags and link MTU values are
+generally not sensitive.  Any solution must support per-information-type
+confidentiality policy rather than applying a uniform policy to all
+content.<a href="#section-7.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="denial-of-service">
+<section id="section-7.3">
+        <h3 id="name-denial-of-service">
+<a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-denial-of-service" class="section-name selfRef">Denial of Service</a>
+        </h3>
+<p id="section-7.3-1">The service is a new high-value target.  Three distinct denial-of-service
+vectors must be considered:<a href="#section-7.3-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-7.3-2.1">
+            <p id="section-7.3-2.1.1">Attacks against registration endpoints prevent nodes from publishing
+capabilities; consumers see absent or stale data and may make
+incorrect forwarding decisions.<a href="#section-7.3-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-7.3-2.2">
+            <p id="section-7.3-2.2.1">Attacks against the discovery mechanism (see Section 4.1) can redirect
+nodes to a malicious service before a session is established; the
+bootstrap trust anchor must itself be authenticated.<a href="#section-7.3-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-7.3-2.3">
+            <p id="section-7.3-2.3.1">Attacks against the distribution path prevent updates from reaching
+consumers, causing them to act on stale information for an extended
+period.<a href="#section-7.3-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-7.3-3">The replicated and distributed nature of the infrastructure partially
+mitigates availability attacks, but does not eliminate them.<a href="#section-7.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="stale-information">
+<section id="section-7.4">
+        <h3 id="name-stale-information">
+<a href="#section-7.4" class="section-number selfRef">7.4. </a><a href="#name-stale-information" class="section-name selfRef">Stale Information</a>
+        </h3>
+<p id="section-7.4-1">When a node fails or is withdrawn without cleanly deregistering, its
+information persists until explicit deletion or expiry.  Consumers
+acting on stale capability or membership data face correctness risk.
+This risk is amplified if an attacker can prevent a node from
+deregistering (for example by severing its management plane connectivity
+while its data plane remains reachable), causing consumers to continue
+acting on capabilities that are no longer valid.<a href="#section-7.4-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="relationship-to-igp-trust-models">
+<section id="section-7.5">
+        <h3 id="name-relationship-to-igp-trust-m">
+<a href="#section-7.5" class="section-number selfRef">7.5. </a><a href="#name-relationship-to-igp-trust-m" class="section-name selfRef">Relationship to IGP Trust Models</a>
+        </h3>
+<p id="section-7.5-1">IS-IS and OSPF both provide cryptographic authentication of protocol
+messages.  The trust model for the offload service must be at least as
+strong as the IGP trust model it complements.  A node trusted in the
+IGP must not be able to inject false information into the offload
+service through a weaker authentication path, nor must the offload
+service become a vector for attacking the IGP itself.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1497,9 +1682,21 @@ these mechanisms address the risks of inappropriate information disclosure.<a hr
 <a href="#section-10.2" class="section-number selfRef">10.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="RFC2104">[RFC2104]</dt>
+<dt id="RFC7752">[RFC7752]</dt>
+        <dd>
+<span class="refAuthor">Gredler, H., Ed.</span>, <span class="refAuthor">Medved, J.</span>, <span class="refAuthor">Previdi, S.</span>, <span class="refAuthor">Farrel, A.</span>, and <span class="refAuthor">S. Ray</span>, <span class="refTitle">"North-Bound Distribution of Link-State and Traffic Engineering (TE) Information Using BGP"</span>, <span class="seriesInfo">RFC 7752</span>, <span class="seriesInfo">DOI 10.17487/RFC7752</span>, <time datetime="2016-03" class="refDate">March 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7752">https://www.rfc-editor.org/rfc/rfc7752</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7981">[RFC7981]</dt>
+        <dd>
+<span class="refAuthor">Ginsberg, L.</span>, <span class="refAuthor">Previdi, S.</span>, and <span class="refAuthor">M. Chen</span>, <span class="refTitle">"IS-IS Extensions for Advertising Router Information"</span>, <span class="seriesInfo">RFC 7981</span>, <span class="seriesInfo">DOI 10.17487/RFC7981</span>, <time datetime="2016-10" class="refDate">October 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7981">https://www.rfc-editor.org/rfc/rfc7981</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8919">[RFC8919]</dt>
+        <dd>
+<span class="refAuthor">Ginsberg, L.</span>, <span class="refAuthor">Psenak, P.</span>, <span class="refAuthor">Previdi, S.</span>, <span class="refAuthor">Henderickx, W.</span>, and <span class="refAuthor">J. Drake</span>, <span class="refTitle">"IS-IS Application-Specific Link Attributes"</span>, <span class="seriesInfo">RFC 8919</span>, <span class="seriesInfo">DOI 10.17487/RFC8919</span>, <time datetime="2020-10" class="refDate">October 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8919">https://www.rfc-editor.org/rfc/rfc8919</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8920">[RFC8920]</dt>
       <dd>
-<span class="refAuthor">Krawczyk, H.</span>, <span class="refAuthor">Bellare, M.</span>, and <span class="refAuthor">R. Canetti</span>, <span class="refTitle">"HMAC: Keyed-Hashing for Message Authentication"</span>, <span class="seriesInfo">RFC 2104</span>, <span class="seriesInfo">DOI 10.17487/RFC2104</span>, <time datetime="1997-02" class="refDate">February 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2104">https://www.rfc-editor.org/rfc/rfc2104</a>&gt;</span>. </dd>
+<span class="refAuthor">Psenak, P., Ed.</span>, <span class="refAuthor">Ginsberg, L.</span>, <span class="refAuthor">Henderickx, W.</span>, <span class="refAuthor">Tantsura, J.</span>, and <span class="refAuthor">J. Drake</span>, <span class="refTitle">"OSPF Application-Specific Link Attributes"</span>, <span class="seriesInfo">RFC 8920</span>, <span class="seriesInfo">DOI 10.17487/RFC8920</span>, <time datetime="2020-10" class="refDate">October 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8920">https://www.rfc-editor.org/rfc/rfc8920</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
