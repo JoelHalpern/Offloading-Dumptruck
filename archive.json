@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-01T03:07:07.303390+00:00",
+  "timestamp": "2026-11-26T05:53:24.628729+00:00",
   "repo": "JoelHalpern/Offloading-Dumptruck",
   "labels": [
     {
@@ -253,6 +253,40 @@
           ]
         }
       ]
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOUfJuls8AAAABR-d5FQ",
+      "title": "First pass at addressing relationship to existing",
+      "url": "https://github.com/JoelHalpern/Offloading-Dumptruck/pull/7",
+      "state": "OPEN",
+      "author": "buraglio",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "IGP Extension Mechanisms and various typographical adjustments. ",
+      "createdAt": "2026-11-25T23:59:07Z",
+      "updatedAt": "2026-11-26T00:00:08Z",
+      "baseRepository": "JoelHalpern/Offloading-Dumptruck",
+      "baseRefName": "main",
+      "baseRefOid": "40dd40ab572b8cfa2f87993ac0111329c19b59ac",
+      "headRepository": "JoelHalpern/Offloading-Dumptruck",
+      "headRefName": "ndb-post-127",
+      "headRefOid": "db8867e6cbab8d2ae0e1b777fa07ddc736d9263a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "buraglio",
+          "authorAssociation": "COLLABORATOR",
+          "body": "There are some assertions made in this new section that I *think* are accurate, but they definitely need a more seasoned set of eyes. ",
+          "createdAt": "2026-11-26T00:00:02Z",
+          "updatedAt": "2026-11-26T00:00:02Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
